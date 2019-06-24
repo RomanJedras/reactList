@@ -7,7 +7,7 @@ const ListWrapper = (props) => (
 		<ul className={'listWrapper_list'}>
 			
 			{twitterAccounts.map(item => (
-				<ListItem {...item} />
+				<ListItem key={item.name} {...item} />
 			))}
 		</ul>
 )

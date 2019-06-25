@@ -1,18 +1,13 @@
 import React from 'react'
 import ListItem from './ListItem/ListItem'
-import './ListWraper.css'
-import {twitterAccounts} from "../../data/twitterAccounts";
+import styles from  './ListWraper.module.scss'
+import uuid from 'uuid';
 
 const ListWrapper = (props) => (
-		<ul className={'listWrapper_list'}>
+		<ul className={styles.listWrapper_list}>
 			
-			{twitterAccounts.map( item=> (
-				<ListItem  name={
-					item.name}
-				           description={item.description}
-				           image={item.image}
-				           link = {item.twitterLink}
-				/>
+			{props.items.map( item=> (
+				<ListItem key={uuid.v4()} {...item} />
 			))}
 		</ul>
 )
